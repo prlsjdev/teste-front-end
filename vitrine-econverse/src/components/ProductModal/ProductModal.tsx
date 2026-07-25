@@ -11,7 +11,15 @@ interface ProductModalProps {
 export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
   const [quantity, setQuantity] = useState<number>(1);
 
-  // Fecha o modal ao pressionar a tecla "Escape"
+useEffect(() => {
+  if (product) {
+    document.body.style.overflow = 'hidden';
+  }
+  return () => {
+    document.body.style.overflow = 'unset';
+  };
+}, [product]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -20,7 +28,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  // Se nenhum produto estiver selecionado, não renderiza nada
+
   if (!product) return null;
 
   const handleDecrease = () => {
@@ -39,7 +47,6 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
       aria-modal="true"
       aria-labelledby="modal-product-title"
     >
-      {/* Impede que o clique dentro do conteúdo do modal feche ele */}
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button
           type="button"

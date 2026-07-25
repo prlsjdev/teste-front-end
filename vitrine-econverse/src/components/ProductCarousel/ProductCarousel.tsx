@@ -16,7 +16,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (containerRef.current) {
-      const scrollAmount = 300; // Distância do scroll a cada clique
+      const scrollAmount = 322; // Distância do scroll a cada clique
       containerRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',

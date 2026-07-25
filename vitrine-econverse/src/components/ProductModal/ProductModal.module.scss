@@ -16,7 +16,8 @@
 .modalContent {
   position: relative;
   width: 90%;
-  max-width: 770px;
+  max-width: 769px;
+  max-height: 299px;
   background-color: $color-white;
   border-radius: 4px;
   padding: 40px;
@@ -35,8 +36,8 @@
 .closeButton {
   @include button-reset;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0px;
+  right: 23px;
   font-size: 31px;
   color: $color-text-dark;
   transition: opacity 0.2s;

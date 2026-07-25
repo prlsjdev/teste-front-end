@@ -1,5 +1,5 @@
-@use '_variables' as *;
-@use '_mixins' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
 
 * {
   margin: 0;
@@ -7,11 +7,19 @@
   box-sizing: border-box;
 }
 
+html {
+  // Melhora a rolagem em dispositivos de toque e evita travamentos
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-main;
   color: $color-text-dark;
   background-color: $color-white;
   -webkit-font-smoothing: antialiased;
+  // Evita rolagem horizontal indesejada no mobile por conta de sombras/overflows
+  overflow-x: hidden;
+  width: 100%;
 }
 
 button {
@@ -24,12 +32,23 @@ img {
   display: block;
 }
 
+/* Container principal da aplicação */
+.app-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container do Título com Responsividade */
 .sectionTitleContainer {
   @include flex-center;
   position: relative;
   width: 100%;
-  max-width: 1280px;
-  margin: 40px auto 20px auto;
+  max-width: 1340px;
+  margin: 40px auto 5px auto;
   padding: 0 16px;
   text-align: center;
 
@@ -44,6 +63,17 @@ img {
     background-color: $color-border;
     z-index: 1;
   }
+
+  // Ajuste de margens em telas menores
+  @media (max-width: 768px) {
+    margin: 24px auto 16px auto;
+    padding: 0 12px;
+
+    &::before {
+      left: 12px;
+      right: 12px;
+    }
+  }
 }
 
 .sectionTitle {
@@ -53,6 +83,17 @@ img {
   padding: 0 24px;
   font-size: 24px;
   font-weight: 700;
-  color: $color-primary; // Usando a cor #3442B5
+  color: $color-primary; // Cor principal (#3442B5)
   text-align: center;
+
+  // Tipografia responsiva para tablets e smartphones
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    padding: 0 12px;
+  }
 }
