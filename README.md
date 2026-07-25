@@ -1,31 +1,61 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# 🛒 Vitrine de Produtos Relacionados (E-commerce)
 
-### Vem ser #Econverse!
+Uma aplicação web moderna e responsiva de vitrine de produtos e-commerce, desenvolvida em **React**, **TypeScript** e **Sass (SCSS Modules)**. O projeto consome uma API de produtos, exibe um carrossel interativo.
 
-Segue abaixo as instruções para a execução do teste.
+---
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail julia.gardiano@econverse.com.br com o título **Teste Vaga FrontEnd**
+## 🔧 Como Executar o Projeto
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+**Pré-requisitos**
+Antes de começar, você precisará ter instalado em sua máquina:
+Node.js (versão 16.x ou superior)
+Gerenciador de pacotes npm ou yarn
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+1 - git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+2 - cd seu-repositorio
+3 - npm install ou yarn install
+4 - npm run dev yarn dev
+5 - Abra http://localhost:5173 (ou a porta indicada no seu terminal).
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## 🚀 Demonstração & Funcionalidades
 
-**Boa sorte! ;)**
+- **📱 Responsividade Completa:** Adaptado para dispositivos móveis, tablets e telas de alta resolução.
+- **🎠 Carrossel de Produtos Interativo:** Rolagem fluida com botões de navegação lateral e navegação por toque (_touch scroll_).
+- **🔎 Modal de Detalhes:** Visualização expandida do produto ao clicar no card, contendo seletor de quantidade e atalho de fecho via tecla `Esc` ou clique fora.
+- **🏷️ Filtros por Categoria:** Navegação entre abas de categorias (Celulares, Acessórios, Tablets, etc.).
+- **🎨 Pixel Perfect & Design System:** Estilização baseada em tokens SCSS, variáveis de cor, fontes e tipografia fiéis ao protótipo do Figma.
+- **⚡ Acessibilidade (a11y):** Marcação semântica (`main`, `section`, `header`, `dialog`), suporte a navegabilidade por teclado e leitores de tela.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **[React](https://react.dev/):** Biblioteca principal para construção da interface.
+- **[TypeScript](https://www.typescriptlang.org/):** Tipagem estática para maior segurança e escalabilidade do código.
+- **[Sass (SCSS Modules)](https://sass-lang.com/):** Estilização modularizada, garantindo escopo fechado sem vazamento de CSS.
+- **[Vite](https://vitejs.dev/) / [Create React App](https://create-react-app.dev/):** Bundler e ambiente de desenvolvimento.
+
+---
+
+## 📐 Arquitetura de Pastas
+
+A estrutura de pastas foi organizada seguindo os princípios de **Clean Code** e separação de responsabilidades:
+
+```bash
+src/
+├── @types/            # Definições de tipos do TypeScript (ex: Product)
+├── assets/            # Imagens, ícones e SVGs
+├── components/        # Componentes React modularizados
+│   ├── CategoryTabs/
+│   ├── Header/
+│   ├── ProductCard/
+│   ├── ProductCarousel/
+│   ├── ProductModal/
+│   ├── RelatedProducts/
+│   └── SectionTitle/
+├── hooks/             # Custom Hooks (ex: useProducts para busca de dados)
+├── styles/            # Estilos globais (_variables, _mixins, main.scss)
+├── utils/             # Funções utilitárias (ex: formatCurrency)
+├── App.tsx            # Orquestrador principal da aplicação
+└── main.tsx           # Ponto de entrada da aplicação
+```
