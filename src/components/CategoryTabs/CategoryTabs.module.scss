@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.categoryNav {
+  width: 100%;
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.categoryList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  overflow-x: auto; // Permite rolagem no mobile
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none; // Esconde barra de rolagem visual
+  }
+}
+
+.categoryItem {
+  flex: 1;
+  text-align: center;
+
+  & + .categoryItem {
+    border-left: 1px solid $color-border;
+  }
+}
+
+.categoryButton {
+  @include button-reset;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &.active {
+    color: $color-primary;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,64 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1350px; 
+  margin: 0 auto;
+  padding: 0 35px; // Espaço para as setas nas laterais
+  box-sizing: border-box;
+}
+
+.carouselContainer {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  max-width: 1280px; 
+  margin: 0 auto;
+  padding: 20px 5px;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.navButton {
+  @include button-reset;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: $color-white;
+  border-radius: 50%;
+  @include flex-center;
+  // Sombra exata solicitada: Y=4px, Blur=4px, #000000 a 25%
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  transition: transform 0.2s, opacity 0.2s;
+
+  &:hover {
+    color: $color-primary;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  &.prev {
+    left: -15px;
+    font-weight: 100;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+.iconNext {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,162 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  @include flex-center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  max-width: 769px;
+  max-height: 299px;
+  background-color: $color-white;
+  border-radius: 4px;
+  padding: 40px;
+  display: flex;
+  gap: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+  @include mobile {
+    flex-direction: column;
+    padding: 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+.closeButton {
+  @include button-reset;
+  position: absolute;
+  top: 0px;
+  right: 23px;
+  font-size: 31px;
+  color: $color-text-dark;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.imageSection {
+  flex: 1;
+  @include flex-center;
+  max-width: 300px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.infoSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  color: $color-text-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-text-dark;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 13px;
+  color: $color-text-muted;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.moreDetails {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: $color-primary;
+  text-decoration: none;
+  margin-bottom: 24px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  height: 40px;
+
+  button {
+    @include button-reset;
+    width: 36px;
+    height: 100%;
+    font-size: 18px;
+    color: $color-primary;
+    @include flex-center;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    width: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-dark;
+  }
+}
+
+.buyModalButton {
+  @include button-reset;
+  flex: 1;
+  height: 40px;
+  background-color: $color-secondary; // Amarelo #F7CA11
+  color: $color-text-dark;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

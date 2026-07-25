@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+// Centralização rápida em Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Layout Flex com espaço entre os itens
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Reset de botão padrão
+@mixin button-reset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+// Media Query Helper
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
