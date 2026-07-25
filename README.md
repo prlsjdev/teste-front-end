@@ -11,7 +11,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
 Node.js (versão 16.x ou superior)
 Gerenciador de pacotes npm ou yarn
 
-- git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git).
+- git clone [https://github.com/prlsjdev/teste-front-end.git](https://github.com/prlsjdev/teste-front-end.git).
 - cd seu-repositorio.
 - npm install ou yarn install.
 - npm run dev yarn dev.
