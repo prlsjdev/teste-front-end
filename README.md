@@ -13,8 +13,8 @@ Gerenciador de pacotes npm ou yarn
 
 - git clone [https://github.com/prlsjdev/teste-front-end.git](https://github.com/prlsjdev/teste-front-end.git).
 - cd seu-repositorio.
-- npm install ou yarn install.
-- npm run dev yarn dev.
+- npm install.
+- npm run dev.
 - Abra http://localhost:XXXX (ou a porta indicada no seu terminal).
 
 ## 🚀 Demonstração & Funcionalidades
