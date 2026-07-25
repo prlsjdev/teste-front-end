@@ -11,10 +11,10 @@ Antes de começar, você precisará ter instalado em sua máquina:
 Node.js (versão 16.x ou superior)
 Gerenciador de pacotes npm ou yarn
 
-1 - git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-2 - cd seu-repositorio
-3 - npm install ou yarn install
-4 - npm run dev yarn dev
+1 - git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git).
+2 - cd seu-repositorio.
+3 - npm install ou yarn install.
+4 - npm run dev yarn dev.
 5 - Abra http://localhost:5173 (ou a porta indicada no seu terminal).
 
 ## 🚀 Demonstração & Funcionalidades
