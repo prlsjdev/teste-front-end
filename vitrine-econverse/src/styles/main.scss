@@ -1,4 +1,5 @@
-@import 'variables';
+@use '_variables' as *;
+@use '_mixins' as *;
 
 * {
   margin: 0;
@@ -21,4 +22,37 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.sectionTitleContainer {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 40px auto 20px auto;
+  padding: 0 16px;
+  text-align: center;
+
+  // Linha decorativa passando por trás do título
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background-color: $color-border;
+    z-index: 1;
+  }
+}
+
+.sectionTitle {
+  position: relative;
+  z-index: 2;
+  background-color: $color-white; // Cobre a linha atrás do texto
+  padding: 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-primary; // Usando a cor #3442B5
+  text-align: center;
 }
