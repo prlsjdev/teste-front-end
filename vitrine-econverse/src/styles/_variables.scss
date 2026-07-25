@@ -1,0 +1,16 @@
+// Cores
+$color-primary: #3442B5;       // Azul dos botões da vitrine e títulos
+$color-secondary: #F7CA11;     // Amarelo do botão COMPRAR no modal
+$color-text-dark: #3F3F40;     // Texto principal
+$color-text-muted: #808080;    // Texto "de R$ 30,90" e descrições
+$color-border: #E5E5E5;        // Bordas dos cards e abas
+$color-white: #FFFFFF;
+$color-bg-light: #F4F5F7;
+
+// Tipografia
+$font-main: 'Poppins', sans-serif; 
+
+// Breakpoints para Responsividade
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
