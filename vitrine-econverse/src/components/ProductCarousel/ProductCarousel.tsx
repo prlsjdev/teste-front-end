@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import type { Product } from '../../@types/product';
+import { ChevronIcon } from '../Icons/ChevronIcon';
 import { ProductCard } from '../ProductCard/ProductCard';
 import styles from './ProductCarousel.module.scss';
 
@@ -32,7 +33,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
         onClick={() => handleScroll('left')}
         aria-label="Anterior"
       >
-        &#10094;
+        <ChevronIcon className={styles.chevronIcon} />
       </button>
 
       <div className={styles.carouselContainer} ref={containerRef}>
@@ -51,7 +52,7 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
         onClick={() => handleScroll('right')}
         aria-label="Próximo"
       >
-        &#10095;
+       <ChevronIcon className={styles.iconNext} />
       </button>
     </div>
   );

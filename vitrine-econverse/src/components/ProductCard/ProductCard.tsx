@@ -28,9 +28,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenModal }
         <p className={styles.installment}>
           ou 2x de {formatCurrency(product.price / 2)} sem juros
         </p>
+        <p className={styles.shipping}>Frete grátis</p>
       </div>
 
-      <p className={styles.shipping}>Frete grátis</p>
+      
 
       <button
         type="button"

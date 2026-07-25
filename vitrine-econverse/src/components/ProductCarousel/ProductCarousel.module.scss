@@ -50,10 +50,15 @@
   }
 
   &.prev {
-    left: 0;
+    left: -15px;
+    font-weight: 100;
   }
 
   &.next {
     right: 0;
   }
+}
+
+.iconNext {
+  transform: rotate(180deg);
 }
