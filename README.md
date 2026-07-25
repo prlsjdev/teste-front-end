@@ -15,7 +15,7 @@ Gerenciador de pacotes npm ou yarn
 - cd seu-repositorio.
 - npm install ou yarn install.
 - npm run dev yarn dev.
-- Abra http://localhost:5173 (ou a porta indicada no seu terminal).
+- Abra http://localhost:XXXX (ou a porta indicada no seu terminal).
 
 ## 🚀 Demonstração & Funcionalidades
 
