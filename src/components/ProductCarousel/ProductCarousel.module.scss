@@ -6,8 +6,11 @@
   width: 100%;
   max-width: 1350px; 
   margin: 0 auto;
-  padding: 0 35px; // Espaço para as setas nas laterais
+  padding: 0 20px; 
   box-sizing: border-box;
+  @media (min-width: 768px) {
+    padding: 0 30px;
+  }
 }
 
 .carouselContainer {
@@ -19,8 +22,13 @@
   width: 100%;
   max-width: 1280px; 
   margin: 0 auto;
-  padding: 20px 5px;
+  padding: 20px 20px;
   box-sizing: border-box;
+  scroll-padding-inline: 20px;
+  @media (min-width: 768px) {
+    padding: 20px 30px;
+    scroll-padding-inline: 30px;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -50,12 +58,19 @@
   }
 
   &.prev {
-    left: -15px;
+    left: 5px; 
     font-weight: 100;
+
+    @media (min-width: 768px) {
+      left: 0px; // Ajustado no desktop para não vazar a borda
+    }
   }
 
   &.next {
-    right: 0;
+    right: 5px;
+    @media (min-width: 768px) {
+      right: 0;
+    }
   }
 }
 
