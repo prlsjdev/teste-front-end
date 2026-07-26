@@ -30,9 +30,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenModal }
         </p>
         <p className={styles.shipping}>Frete grátis</p>
       </div>
-
-      
-
       <button
         type="button"
         className={styles.buyButton}
