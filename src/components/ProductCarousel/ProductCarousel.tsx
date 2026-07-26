@@ -23,6 +23,21 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
       const firstCard = cards[0];
 
       if (!firstCard) return;
+
+      const containerStyles = window.getComputedStyle(container);
+      const visibleWidth =
+        container.clientWidth -
+        Number.parseFloat(containerStyles.paddingLeft) -
+        Number.parseFloat(containerStyles.paddingRight);
+      const cardStep = cards[1]
+        ? cards[1].offsetLeft - firstCard.offsetLeft
+        : firstCard.offsetWidth;
+      const gap = Math.max(0, cardStep - firstCard.offsetWidth);
+      const cardsPerPage = Math.max(
+        1,
+        Math.floor((visibleWidth + gap) / cardStep),
+      );
+
       const currentIndex = cards.reduce((closestIndex, card, index) => {
         const closestDistance = Math.abs(
           cards[closestIndex].offsetLeft - firstCard.offsetLeft - container.scrollLeft,
@@ -34,7 +49,10 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
         return distance < closestDistance ? index : closestIndex;
       }, 0);
       const nextIndex = Math.min(
-        Math.max(currentIndex + (direction === 'left' ? -1 : 1), 0),
+        Math.max(
+          currentIndex + (direction === 'left' ? -cardsPerPage : cardsPerPage),
+          0,
+        ),
         cards.length - 1,
       );
 
