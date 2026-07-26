@@ -14,6 +14,8 @@
 }
 
 .carouselContainer {
+  --carousel-edge: 20px;
+
   display: flex;
   gap: 18px;
   overflow-x: auto;
@@ -22,12 +24,20 @@
   width: 100%;
   max-width: 1280px; 
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 20px var(--carousel-edge);
   box-sizing: border-box;
-  scroll-padding-inline: 20px;
+  scroll-padding-inline: var(--carousel-edge);
   @media (min-width: 768px) {
-    padding: 20px 30px;
-    scroll-padding-inline: 30px;
+    --carousel-edge: 30px;
+    > * {
+      flex-basis: calc((100% - 36px) / 3);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    > * {
+      flex-basis: calc((100% - 54px) / 4);
+    }
   }
 
   &::-webkit-scrollbar {
@@ -35,6 +45,10 @@
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  > * {
+    scroll-snap-stop: always;
+  }
 }
 
 .navButton {
@@ -47,7 +61,6 @@
   background-color: $color-white;
   border-radius: 50%;
   @include flex-center;
-  // Sombra exata solicitada: Y=4px, Blur=4px, #000000 a 25%
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 10;
   transition: transform 0.2s, opacity 0.2s;
@@ -62,7 +75,7 @@
     font-weight: 100;
 
     @media (min-width: 768px) {
-      left: 0px; // Ajustado no desktop para não vazar a borda
+      left: 0px; 
     }
   }
 

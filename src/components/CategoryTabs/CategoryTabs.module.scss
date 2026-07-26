@@ -15,11 +15,11 @@
   list-style: none;
   border: 1px solid $color-border;
   border-radius: 4px;
-  overflow-x: auto; // Permite rolagem no mobile
+  overflow-x: auto; 
   white-space: nowrap;
 
   &::-webkit-scrollbar {
-    display: none; // Esconde barra de rolagem visual
+    display: none; 
   }
 }
 

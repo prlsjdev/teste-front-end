@@ -9,7 +9,6 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenModal }) => {
-  // Preço antigo fictício baseado no layout (ex: R$ 30,90 ou +10%)
   const oldPrice = product.price * 1.1;
 
   return (

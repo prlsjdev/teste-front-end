@@ -16,10 +16,30 @@ export const ProductCarousel: React.FC<ProductCarouselProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (direction: 'left' | 'right') => {
-    if (containerRef.current) {
-      const scrollAmount = 322; // Distância do scroll a cada clique
-      containerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+    const container = containerRef.current;
+
+    if (container) {
+      const cards = Array.from(container.children) as HTMLElement[];
+      const firstCard = cards[0];
+
+      if (!firstCard) return;
+      const currentIndex = cards.reduce((closestIndex, card, index) => {
+        const closestDistance = Math.abs(
+          cards[closestIndex].offsetLeft - firstCard.offsetLeft - container.scrollLeft,
+        );
+        const distance = Math.abs(
+          card.offsetLeft - firstCard.offsetLeft - container.scrollLeft,
+        );
+
+        return distance < closestDistance ? index : closestIndex;
+      }, 0);
+      const nextIndex = Math.min(
+        Math.max(currentIndex + (direction === 'left' ? -1 : 1), 0),
+        cards.length - 1,
+      );
+
+      container.scrollTo({
+        left: cards[nextIndex].offsetLeft - firstCard.offsetLeft,
         behavior: 'smooth',
       });
     }
